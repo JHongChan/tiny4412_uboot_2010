@@ -162,7 +162,11 @@
 #undef CONFIG_USB_STORAGE
 #define CONFIG_S3C_USBD
 
-#define USBD_DOWN_ADDR		0xc0000000
+/* use virtual address */
+/* #define USBD_DOWN_ADDR		0xc0000000 */
+
+/* use phy address */
+#define USBD_DOWN_ADDR		0x40800000
 
 /* allow to overwrite serial and ethaddr */
 #define CONFIG_ENV_OVERWRITE
@@ -252,7 +256,7 @@
 #define CONFIG_SYS_LONGHELP		/* undef to save memory */
 #define CONFIG_SYS_HUSH_PARSER		/* use "hush" command parser	*/
 #define CONFIG_SYS_PROMPT_HUSH_PS2	"> "
-#define CONFIG_SYS_PROMPT		"TINY4412 # "
+#define CONFIG_SYS_PROMPT		"TINY4412_CYH # "
 #define CONFIG_SYS_CBSIZE	256	/* Console I/O Buffer Size */
 #define CONFIG_SYS_PBSIZE	384	/* Print Buffer Size */
 #define CONFIG_SYS_MAXARGS	16	/* max number of command args */
@@ -308,7 +312,11 @@
 #define CONFIG_SYS_MONITOR_LEN		(256 << 10)	/* 256 KiB */
 #define CONFIG_IDENT_STRING		" for TINY4412"
 
-#define CONFIG_ENABLE_MMU
+/* use MMU */
+/* #define CONFIG_ENABLE_MMU */
+
+/* not use MMU */
+#undef CONFIG_ENABLE_MMU
 
 #ifdef CONFIG_ENABLE_MMU
 #define CONFIG_SYS_MAPPED_RAM_BASE	0xc0000000

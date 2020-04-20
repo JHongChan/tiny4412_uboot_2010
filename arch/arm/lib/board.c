@@ -61,6 +61,8 @@
 #include "../drivers/net/lan91c96.h"
 #endif
 
+extern unsigned int OmPin;
+
 DECLARE_GLOBAL_DATA_PTR;
 extern int nr_dram_banks;
 
@@ -535,6 +537,16 @@ void board_init_r(gd_t *id, ulong dest_addr)
 
 	/* initialize environment */
 	env_relocate();
+
+	if(OmPin==BOOT_MMCSD){
+	 setenv("emmcdev","1");
+	 setenv("sddev","0");
+	 }
+	 else{
+	 setenv("emmcdev","0");
+	 setenv("sddev","1");
+	 }
+
 
 #ifdef CONFIG_VFD
 	/* must do this after the framebuffer is allocated */

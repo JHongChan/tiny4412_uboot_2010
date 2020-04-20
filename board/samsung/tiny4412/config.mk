@@ -10,4 +10,8 @@
 #
 #
  
-CONFIG_SYS_TEXT_BASE = 0xc3e00000
+#USE virtual address
+#CONFIG_SYS_TEXT_BASE = 0xc3e00000
+
+#USE phy address
+CONFIG_SYS_TEXT_BASE = 0x43e00000
