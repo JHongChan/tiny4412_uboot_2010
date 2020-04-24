@@ -44,6 +44,7 @@ COBJS-y += xyzModem.o
 
 # core command
 COBJS-y += cmd_boot.o
+COBJS-y += cmd_bootz.o
 COBJS-y += cmd_bootm.o
 COBJS-y += cmd_help.o
 COBJS-y += cmd_nvedit.o
